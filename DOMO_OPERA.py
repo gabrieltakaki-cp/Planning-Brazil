@@ -17,7 +17,7 @@ secret = os.environ['client_secret']
 
 domo = Domo(cliente_id, secret, api_host='api.domo.com')
 input_dataset = '2fdb6825-1f2d-4742-8f00-73531ef9183a'
-output_dataset = '5a900d0f-6ca9-4310-902a-0735d1e768d6'
+output_dataset = '2982850a-98d5-4b83-ad2b-591b56bd61df'
 
 sqlite_file = 'database_dfr.db'
 table_name = 'TEMP'
@@ -40,7 +40,8 @@ sql = f"""SELECT LINE_NAME,
     PRODUCTION_ORDER_RATE,
     RAMPUP_FLAG,
     PRODUCTIONDATE_DAY_LOC,
-    GOOD_PRODUCTION_QTY FROM TABLE WHERE PLANT IN ('BR10','BR12') AND GOOD_PRODUCTION_QTY > 0"""
+    GOOD_PRODUCTION_QTY,
+    SIZE_TYPE FROM TABLE WHERE PLANT IN ('BR10','BR12') AND GOOD_PRODUCTION_QTY > 0"""
 
 
 transactions = domo.ds_query(input_dataset, query=sql)
