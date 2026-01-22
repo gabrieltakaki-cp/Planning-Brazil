@@ -1,7 +1,9 @@
+# File for domo database update - need to create a .yaml file to run in GIThub
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 11 * * *'
+    - cron: '0 11 * * *'  #cron created for deploy at 11 am BRL time
 
 jobs:
   update-data:
